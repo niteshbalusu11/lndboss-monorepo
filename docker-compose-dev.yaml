@@ -1,0 +1,8 @@
+services:
+  lndboss:
+    build: .
+    volumes:
+      - ~/.bosgui:/home/node/.bosgui
+      - /Users/nitesh/Library/Application Support/Lnd:/home/node/.lnd
+    ports:
+      - '8055:8055'

@@ -1,0 +1,12 @@
+services:
+  lndboss:
+    image: niteshbalusu/lndboss:latest
+    volumes:
+      - ~/.bosgui:/home/node/.bosgui
+      - /path/to/your/lnd/directory:/home/node/.lnd
+    ports:
+      - "8055:8055"
+networks:
+  default:
+    name: 1_default
+    external: true

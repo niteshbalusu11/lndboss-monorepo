@@ -1,0 +1,14 @@
+services:
+  lndboss:
+    image: niteshbalusu/lndboss:latest
+    volumes:
+      - ~/.bosgui:/home/node/.bosgui
+      - ~/umbrel/app-data/lightning/data/lnd:/home/node/.lnd
+    ports:
+      - '8055:8055'
+    extra_hosts:
+      - 'localhost:10.21.21.9'
+networks:
+  default:
+    external: true
+    name: umbrel_main_network
