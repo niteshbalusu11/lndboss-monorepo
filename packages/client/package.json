@@ -1,7 +1,10 @@
 {
-  "name": "client",
-  "version": "0.1.0",
+  "name": "lndboss-client",
+  "description": "Client for LndBoss",
+  "version": "2.0.1",
+  "author": "Nitesh Balusu",
   "private": true,
+  "license": "MIT",
   "scripts": {
     "dev": "NODE_ENV=development next dev -p ${PORT-8055}",
     "build:prod": "next build",

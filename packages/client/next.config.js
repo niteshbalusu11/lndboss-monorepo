@@ -9,7 +9,7 @@ dotenv.config({ path: path.resolve(process.cwd(), '../', '../', '.env') });
 
 module.exports = {
   publicRuntimeConfig: {
-    apiUrl: `${process.env.BASE_PATH || ''}/api`,
-    basePath: process.env.BASE_PATH || '',
+    apiUrl: `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/api`,
+    basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
   },
 };

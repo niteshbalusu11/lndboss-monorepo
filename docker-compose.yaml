@@ -1,11 +1,16 @@
 services:
   lndboss:
-    image: niteshbalusu/lndboss:latest
+    build: .
     volumes:
       - ~/.bosgui:/home/node/.bosgui
-      - /path/to/your/lnd/directory:/home/node/.lnd
+      - /Users/nitesh/.polar/networks/1/volumes/lnd/alice/:/home/node/.lnd
     ports:
       - "8055:8055"
+    environment:
+      BOS_DATA_PATH: '/home/node/.bosgui'
+      NODE_ENV: 'production'
+      PORT: 8055
+      BOS_DEFAULT_LND_SOCKET: "localhost:10001"
 networks:
   default:
     name: 1_default
