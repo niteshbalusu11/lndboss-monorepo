@@ -1,9 +1,0 @@
-{
-  "compilerOptions": {
-    "baseUrl": "./packages",
-    "paths": {
-      "~client/*": ["client/*"],
-      "~server/*": ["server/*"],
-    }
-  }
-}
