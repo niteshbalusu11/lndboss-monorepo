@@ -6,17 +6,20 @@
 logs
 *.log
 npm-debug.log*
-pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
 # OS
 .DS_Store
+.next
 
 # Tests
 /coverage
 /.nyc_output
+/test-results/
+/playwright-report/
+/playwright/.cache/
 
 # IDEs and editors
 /.idea
@@ -33,3 +36,17 @@ lerna-debug.log*
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+/test-results/
+/playwright-report/
+/playwright/.cache/
+
+# Env files
+.env
+.env.local
+
+# Docker
+lndboss.tar
+lndboss.tar.gz
+/test-results/
+/playwright-report/
+/playwright/.cache/

@@ -1,8 +1,20 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import { NextRouter } from 'next/router';
+import { RouteGuard } from '~client/standard_components/app-components';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
-}
+// First page that gets rendered before every page.
 
-export default MyApp
+type Props = {
+  Component: React.ComponentType;
+  pageProps: any;
+  router: NextRouter;
+};
+
+const App = ({ Component, pageProps, router }: Props) => {
+  return (
+    <RouteGuard router={router}>
+      <Component {...pageProps} />
+    </RouteGuard>
+  );
+};
+
+export default App;

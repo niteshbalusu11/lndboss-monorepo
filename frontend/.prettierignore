@@ -1,0 +1,10 @@
+docker-compose.yaml
+yarn.lock
+package.json
+node_modules
+dist
+.next
+Dockerfile
+yarn-error.log
+LICENSE
+README.md

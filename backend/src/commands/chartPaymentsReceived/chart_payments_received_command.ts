@@ -1,0 +1,46 @@
+import * as types from '~shared/types';
+
+import { AuthenticatedLnd } from 'lightning';
+import { getReceivedChart } from 'balanceofsatoshis/wallets';
+import { httpLogger } from '~src/utils/global_functions';
+
+/** Get data for received payments chart
+
+  {
+    [days]: <Received Over Days Count Number>
+    [end_date]: <End Date YYYY-MM-DD String>
+    [is_count]: <Show Count Boolean>
+    lnds: [<Authenticated LND API Object>]
+    [query]: <Query String>
+    [start_date]: <Start Date YYYY-MM-DD String>
+  }
+
+  @returns via Promise
+  {
+    data: [<Received Tokens Number>]
+    description: <Chart Description String>
+    title: <Chart Title String>
+  }
+*/
+
+type Args = {
+  args: types.commandChartPaymentsReceived;
+  lnd: AuthenticatedLnd[];
+};
+const chartPaymentsReceivedCommand = async ({ args, lnd }: Args): Promise<{ result: any }> => {
+  try {
+    const result = await getReceivedChart({
+      lnds: lnd,
+      days: args.days,
+      end_date: args.end_date || undefined,
+      is_count: args.is_count || undefined,
+      query: args.query,
+      start_date: args.start_date || undefined,
+    });
+    return { result };
+  } catch (error) {
+    httpLogger({ error });
+  }
+};
+
+export default chartPaymentsReceivedCommand;
