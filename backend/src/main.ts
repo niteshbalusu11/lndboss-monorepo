@@ -20,7 +20,7 @@ async function bootstrap() {
 
   app.useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true }));
 
-  await app.listen(process.env.PORT || 8055, () => {
+  await app.listen(process.env.BACKEND_PORT || 8056, () => {
     process.env.BOS_DATA_PATH = join(...[homedir(), '.bosgui']);
   });
 
