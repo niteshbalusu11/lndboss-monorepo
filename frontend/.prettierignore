@@ -2,6 +2,7 @@ docker-compose.yaml
 yarn.lock
 package.json
 node_modules
+node_moduless
 dist
 .next
 Dockerfile

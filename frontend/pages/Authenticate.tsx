@@ -10,12 +10,11 @@ import {
 import Head from 'next/head';
 import Router from 'next/router';
 import axios from 'axios';
-import getConfig from 'next/config';
+import { clientConstants } from '~client/utils/constants';
 import { useLoading } from '~client/hooks/useLoading';
 import { useNotify } from '~client/hooks/useNotify';
 
-const { publicRuntimeConfig } = getConfig();
-const { apiUrl } = publicRuntimeConfig;
+const apiUrl = clientConstants.apiUrl;
 
 /*
   Renders the login page that takes in the macaroon, cert, and socket.

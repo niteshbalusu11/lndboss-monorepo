@@ -1,9 +1,9 @@
 import axios from 'axios';
-import getConfig from 'next/config';
+import { clientConstants } from './constants';
 import { useLoading } from '~client/hooks/useLoading';
 import { useNotify } from '~client/hooks/useNotify';
-const { publicRuntimeConfig } = getConfig();
-const { apiUrl } = publicRuntimeConfig;
+
+const apiUrl = clientConstants.apiUrl;
 
 type ArgsGet = {
   path: string;

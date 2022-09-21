@@ -6,12 +6,10 @@ import Head from 'next/head';
 import Router from 'next/router';
 import axios from 'axios';
 import { clientConstants } from '~client/utils/constants';
-import getConfig from 'next/config';
 import { useNotify } from '~client/hooks/useNotify';
 import { usePasswordValidation } from '~client/hooks/usePasswordValidation';
 
-const { publicRuntimeConfig } = getConfig();
-const { apiUrl } = publicRuntimeConfig;
+const apiUrl = clientConstants.apiUrl;
 
 /*
   Renders the register page

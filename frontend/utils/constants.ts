@@ -1,4 +1,5 @@
 export const clientConstants = {
+  apiUrl: `http://localhost:${process.env.BACKEND_PORT || 8056}/api`,
   authenticatePage: '/Authenticate',
   commandsPage: '/Commands',
   dashboardPage: '/Dashboard',
